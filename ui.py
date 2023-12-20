@@ -1,8 +1,6 @@
-# from xhtml2pdf import pisa
 from main import base, shares, reader, end
 import streamlit as st
 from PIL import Image
-
 import os
 import re
 
@@ -33,16 +31,11 @@ def write_html(pr_name, reg_name, link, st=None, rdr=False):
         html = base + shares + reader + end
     else:
         html = base + shares + end
-        
-
-    # convert HTML to PDF
-    # pisa_status = pisa.CreatePDF(
-    #     my_html,                # the HTML to convert
-    #     dest=html_file)           # file handle to recieve result
 
     # close output file
     html_file.write(html)
-    html_file.close() 
+    html_file.close()
+    return html_file
 
 def main():
     
@@ -104,23 +97,15 @@ def main():
             # render portion
             write_html(provider_name, provider_region, spn_referral_link, steps)
         elif reader:
+            # render portion
             write_html(provider_name, provider_region, spn_referral_link, reader)
         else:
+            # render base
             write_html(provider_name, provider_region, spn_referral_link)
+
+        f = open("snowflake_data_sharing.html", "r")
+
+        st.download_button(label="Download file", data=f, file_name="snowflake_data_sharing.html")
 
 if __name__ == "__main__":
     main()
-
-
-
-
-# # Render a st.button that creates the pdf on click
-# st.button("Generate PDF", 
-#     type="primary",
-#     on_click=convert_html_to_pdf(provider_name, provider_region, spn_referral_link, 'myfile.pdf')
-# );
-
-
-# define a create pdf functgion that takes the dict, generates the PDF with values in dict
-# if __name__ == "__main__":
-    # create_pdf(title)
