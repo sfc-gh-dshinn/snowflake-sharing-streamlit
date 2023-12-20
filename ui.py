@@ -1,4 +1,4 @@
-from xhtml2pdf import pisa
+# from xhtml2pdf import pisa
 from main import base, shares, reader, end
 import streamlit as st
 from PIL import Image
