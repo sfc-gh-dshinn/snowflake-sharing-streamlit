@@ -40,7 +40,7 @@ base = '''<html>
 		</style>
 	</head>
 	<body>
-		<img src="./assets/image3.jpg" class="header"/>
+		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image3.jpg" class="header"/>
 		<h1>How to use Snowflake to share data</h1>
 		<p>
 		  ProviderName would like to share data with you via Snowflake to support your partnership and joint goals. This guide provides information about how to connect with ProviderName.
@@ -48,16 +48,16 @@ base = '''<html>
 		<p>
 			Snowflake can help answer your Snowflake-specific questions about data sharing and Snowflake account creation. If you're an existing Snowflake customer, contact your Snowflake account team for help; otherwise, please click here. 
 		</p>
-		<h3><span><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/></span> What is Snowflake?</h3>
+		<h3><span><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/></span> What is Snowflake?</h3>
 		<p>
 			Snowflake's Data Cloud is a global network where thousands of organizations mobilize data with near-unlimited scale, concurrency and performance. Snowflake provides organizations with a unified view of data so they can easily discover and securely share governed data, power data applications and execute diverse AI/ML and analytic workloads. All of this is delivered in a single data experience that spans multiple clouds and geographies.
 
 		</p>
-		<h3><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> Why trust Snowflake?</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Why trust Snowflake?</h3>
 		<p>
 			Security is a core element of the Snowflake Platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/">Snowflake Security and Trust Center</a>.
 		</p>
-		<h3><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> 4 reasons to use Snowflake for data sharing</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> 4 reasons to use Snowflake for data sharing</h3>
 		<ul>
 			<li><strong>It's easy. </strong>Connect in just a few clicks and start receiving data. With cross-cloud auto-fulfillment, data is available across clouds and regions when and where you need it. </li>
 			<li><strong>There's no need to move data.  </strong>Snowflake allows you to share data without transferring it. No need for ETL, FTP or moving data between environments. </li>
@@ -65,14 +65,14 @@ base = '''<html>
 			<li><strong>Data is ready to use upon delivery. </strong>Snowflake delivers direct access to live, ready-to-query data. Perform fewer data transformations because the shared data stays in Snowflake, and easily join shared data sets with your own data.
 			</li>
 		</ul>
-		<h3><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> How does Snowflake Data Sharing work?</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How does Snowflake Data Sharing work?</h3>
 		<p>
 			ProviderName creates a share of a database in their Snowflake account and grants access to specific objects (tables, views and functions) in the database. You, as the consumer, will then see a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
 		</p>
 		<p>
 			For more specific details, see our <a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro">Introduction to Snowflake Secure Data Sharing doc</a>.
 		</p>
-		<h3><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> Terms and definitions</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Terms and definitions</h3>
 		<p>
 			Collaboration depends on a shared, consistent understanding of common words and phrases so everyone can communicate clearly. Here are definitions of several terms that appear in this guide:
 		</p>
@@ -84,7 +84,7 @@ base = '''<html>
 			<li><strong>Listing: </strong>A way to offer a share plus metadata as a data product to one or more account</li>
 			<li><strong>Data Product: </strong>A reusable “building block” built to deliver data, data services, app code or data insights for a specific purpose</li>
 		</ul>
-		<h3><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>
 		<h4>If you are new to Snowflake</h3>
 		<p>
 			Getting started with Snowflake is easy, and it's a low-risk, no-commitment process.
@@ -102,7 +102,7 @@ base = '''<html>
 		</p>
 		<ol>
 			<li>Open the account selector and review the list of accounts.</li>
-			<img src="./assets/image2.png" class="step"/>
+			<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image2.png" class="step"/>
 			<br />
 			<br />
 			<br />
@@ -110,7 +110,7 @@ base = '''<html>
 			<br />
 			<li>Hover over the account to view additional details and select the copy icon to copy the account identifier in the format &lt;orgname&gt;.&lt;account_name&gt; to your clipboard.</li>
 			<br />
-			<img src="./assets/image5.png" class="step"/>
+			<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image5.png" class="step"/>
 		</ol>
 		<br />
 		<p>
@@ -120,7 +120,7 @@ base = '''<html>
 shares='''<p>
 			You can view the ProviderName shares that are available to consume in your Snowflake account in the Snowsight UI. <strong>Select Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
 		</p>
-		<img src="./assets/image4.png" class="step"/>
+		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image4.png" class="step"/>
 		<p>
 			For more details, including how to use the Snowflake Classic Console or SQL to  view available, please check out our <a href="https://docs.snowflake.com/en/user-guide/data-share-consumers#viewing-available-shares">"Consuming Shared Data" doc</a>. 
 		</p>'''
@@ -130,7 +130,7 @@ reader='''<h4>If you do not have a Snowflake account and do not want to set one 
 		<p>To request a Reader Account, please contact ProviderName.</p>'''
 
         
-end='''<h4 class="end"><img src="https://raw.githubusercontent.com/sfc-gh-ghernandez/snowflake-sharing-streamlit/main/assets/image1.png?token=GHSAT0AAAAAACCXQPB6TO6ZCSIAAW4IC6GIZMCMWNA" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
+end='''<h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
 		<p class="legal">
 			© 2023 Snowflake Inc. All rights reserved. Snowflake, the Snowflake logo, and all other Snowflake product, feature and service names mentioned herein are registered trademarks or trademarks of Snowflake Inc. in the United States and other countries. All other brand names or logos mentioned or used herein are for identification purposes only and may be the trademarks of their respective holder(s). Snowflake may not be associated with, or be sponsored or endorsed by, any such holder(s). 
 		</p>
