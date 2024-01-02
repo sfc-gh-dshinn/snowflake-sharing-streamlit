@@ -23,10 +23,10 @@ def write_html(pr_name, reg_name, link, st=None, rdr=False):
 
     # Has steps, supports reader
     if st is not None and rdr is True:
-        html = base + shares + st + reader + end
+        html = base + st + shares + reader + end
     elif st is not None:
         # Has steps, does not support reader
-        html = base + shares + st + end
+        html = base + st + shares + end
     elif rdr is True:
         html = base + shares + reader + end
     else:
