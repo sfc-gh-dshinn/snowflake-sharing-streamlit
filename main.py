@@ -37,6 +37,9 @@ base = '''<html>
 			a.end {
 				color: #29b5e8;
 			}
+            li {
+				margin-bottom: 10px;
+			}
 		</style>
 	</head>
 	<body>
@@ -55,13 +58,13 @@ base = '''<html>
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Why trust Snowflake?</h3>
 		<p>
-			Security is a core element of the Snowflake Platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/">Snowflake Security and Trust Center</a>.
+			Security is a core element of the Snowflake platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/">Snowflake Security and Trust Center</a>.
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> 4 reasons to use Snowflake for data sharing</h3>
 		<ul>
 			<li><strong>It's easy. </strong>Connect in just a few clicks and start receiving data. With cross-cloud auto-fulfillment, data is available across clouds and regions when and where you need it. </li>
 			<li><strong>There's no need to move data.  </strong>Snowflake allows you to share data without transferring it. No need for ETL, FTP or moving data between environments. </li>
-			<li><strong>Robust data governance. </strong>You control access to your data in a centralized, flexible way. Share data with one other account, a group of accounts or to any company in the Data Cloud via the Snowflake Marketplace.</li>
+			<li><strong>Robust data governance. </strong>You control access to your data in a centralized, flexible way. Share data with one other account, a group of accounts or to any company in the Data Cloud via Snowflake Marketplace.*</li>
 			<li><strong>Data is ready to use upon delivery. </strong>Snowflake delivers direct access to live, ready-to-query data. Perform fewer data transformations because the shared data stays in Snowflake, and easily join shared data sets with your own data.
 			</li>
 		</ul>
@@ -81,8 +84,8 @@ base = '''<html>
 			<li><strong>Consumer: </strong>The account that receives data</li>
 			<li><strong>Share: </strong>A named Snowflake object that encapsulates all of the information required to share a database</li>
 			<li><strong>Direct share: </strong> A way to directly share specific database options (a share) to another account in the same region</li>
-			<li><strong>Listing: </strong>A way to offer a share plus metadata as a data product to one or more account</li>
-			<li><strong>Data Product: </strong>A reusable “building block” built to deliver data, data services, app code or data insights for a specific purpose</li>
+			<li><strong>Listing: </strong>A way to offer a share plus metadata as a data product*</li>
+			<li><strong>Data Product: </strong>A reusable “building block” of data, data services, app code or data insights for a specific purpose</li>
 		</ul>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>
 		<h4>If you are new to Snowflake</h3>
@@ -95,13 +98,14 @@ base = '''<html>
 			<li>Your on-demand account will never expire and you will not be forced to make a long-term financial commitment</li>
 		</ul>
 		<p>To get a free Snowflake trial account, visit SPN_ReferralLink.</p>
-		<p><strong>NOTE</strong> During the sign-up process, you will choose the cloud region for your Snowflake instance. If you have no specific preference, we recommend you save time and costs by using the same cloud region as ProviderName: ProviderRegion.</p>
+		<p><strong>NOTE:</strong> During the sign-up process, you will choose the cloud region for your Snowflake instance. If you have no specific preference, we recommend you save time and costs by using the same cloud region as ProviderName: ProviderRegion.</p>
 		<h4>Once your account is set up OR if you are an existing Snowflake customer</h3>
 		<p>
-			For existing Snowflake customers, ProviderName will need your Snowflake account identifier to share into your account. To find your Snowflake account identifier, follow these steps:
+			ProviderName will need your Snowflake account identifier to share into your account. To find your Snowflake account identifier, follow these steps:
 		</p>
 		<ol>
 			<li>Open the account selector and review the list of accounts.</li>
+            <br />
 			<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image2.png" class="step"/>
 			<br />
 			<br />
@@ -132,6 +136,9 @@ reader='''<h4>If you do not have a Snowflake account and do not want to set one 
         
 end='''<h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
 		<p class="legal">
+        * Use of Snowflake Marketplace is subject to the Snowflake Provider and Consumer Terms of Service, which is separate from the Snowflake Terms of Service.
+        </p> 
+        <p class="legal">
 			© 2023 Snowflake Inc. All rights reserved. Snowflake, the Snowflake logo, and all other Snowflake product, feature and service names mentioned herein are registered trademarks or trademarks of Snowflake Inc. in the United States and other countries. All other brand names or logos mentioned or used herein are for identification purposes only and may be the trademarks of their respective holder(s). Snowflake may not be associated with, or be sponsored or endorsed by, any such holder(s). 
 		</p>
 	</body>
