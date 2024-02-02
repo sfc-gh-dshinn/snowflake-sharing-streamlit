@@ -42,33 +42,36 @@ def main():
     image = Image.open('./assets/image3.jpg')
     st.image('./assets/image3.jpg')
     
-    st.title("Create a Personalized Doc with Data Sharing Guidelines")
+    st.title("Customize a Guidelines Doc for Sharing Data via Snowflake")
 
-    st.write("Simplify the process of sharing data with your customers by giving them a document that walks them through the process of connecting with you via Snowflake. This app will create a set of data sharing guidelines customized with your company's information to help your customer set up a Snowflake account and connect with you.")
+    st.write("Simplify the process of sharing data with your customers: give them a how-to-share document customized with your company's name and preferences. This app will create a set of data sharing guidelines customized with your company's information to help your customer connect with you through their existing Snowflake account or by setting up a new Snowflake account.")
 
-    st.write("To start, please input the requested information, including directions for how a customer can share their Snowflake ID with you. The app will generate a customized HTML document that you can save as a PDF and send to your customers.")
+    st.write("To get started, please fill out this form as completely as possible. The app will generate a customized HTML document that you can save as a PDF and send to your customers. You can return to this form and create additional versions as needed.")
 
     # Create a form
     with st.form(key='user_input_form'):
 
         # required
-        provider_name = st.text_input('Provider Name (required):')
+        st.markdown("How do you want to refer to your organization in this document? The text you enter will be used to customize the document. Click [here](link) for an example.")
+        provider_name = st.text_input('Provider Name (required)')
+        st.markdown('---')
+        
 
         # required
-        provider_region = st.text_input('Provider Region (required):')
+        provider_region = st.text_input('Provider Region (required) ' + '\n' + 'A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup. Click here to see how this will appear in the doc.')
 
         # optional
-        spn_referral_link = st.text_input('SPN Referral Link:')
+        spn_referral_link = st.text_input('SPN Referral Link (if available)' + '\n' + 'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
 
         # optional
-        desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
+        desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID." Click here to see how this will appear in the doc.'''
 
         steps = st.text_area(desc_steps)
 
         # optional
-        reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account")
+        reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account. Click here to see how this information will appear in the doc.")
         
-        submit_button = st.form_submit_button('Generate file')
+        submit_button = st.form_submit_button('Submit')
        
     # Capture inputs
     # When button is clicked:
@@ -105,7 +108,8 @@ def main():
 
         f = open("snowflake_data_sharing.html", "r")
 
-        st.download_button(label="Download file", data=f, file_name="snowflake_data_sharing.html")
+        st.download_button(label="Download HTML file", data=f, file_name="snowflake_data_sharing.html")
+        st.write("Once the download is complete, open the HTML file and save the page as a PDF with the file name of your choice. You can then send the PDF to your customer.")
 
 if __name__ == "__main__":
     main()

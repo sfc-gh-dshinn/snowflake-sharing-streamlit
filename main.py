@@ -49,7 +49,7 @@ base = '''<html>
 		  ProviderName would like to share data with you via Snowflake to support your partnership and joint goals. This guide provides information about how to connect with ProviderName.
 		</p>
 		<p>
-			Snowflake can help answer your Snowflake-specific questions about data sharing and Snowflake account creation. If you're an existing Snowflake customer, contact your Snowflake account team for help; otherwise, please click here. 
+			Have Snowflake-specific questions about data sharing and Snowflake account creation? If you're an existing Snowflake customer, contact your Snowflake account team for help; otherwise, please <a href="https://www.snowflake.com/marketplace-contact-us" target="_blank">click here</a>. 
 		</p>
 		<h3><span><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/></span> What is Snowflake?</h3>
 		<p>
@@ -58,7 +58,7 @@ base = '''<html>
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Why trust Snowflake?</h3>
 		<p>
-			Security is a core element of the Snowflake platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/">Snowflake Security and Trust Center</a>.
+			Security is a core element of the Snowflake platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/" target="_blank">Snowflake Security and Trust Center</a>.
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> 4 reasons to use Snowflake for data sharing</h3>
 		<ul>
@@ -68,12 +68,12 @@ base = '''<html>
 			<li><strong>Data is ready to use upon delivery. </strong>Snowflake delivers direct access to live, ready-to-query data. Perform fewer data transformations because the shared data stays in Snowflake, and easily join shared data sets with your own data.
 			</li>
 		</ul>
-		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How does Snowflake Data Sharing work?</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How does Snowflake Secure Data Sharing work?</h3>
 		<p>
 			ProviderName creates a share of a database in their Snowflake account and grants access to specific objects (tables, views and functions) in the database. You, as the consumer, will then see a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
 		</p>
 		<p>
-			For more specific details, see our <a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro">Introduction to Snowflake Secure Data Sharing doc</a>.
+			For more specific details, see our <a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro" target="_blank">Introduction to Snowflake Secure Data Sharing doc</a>.
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Terms and definitions</h3>
 		<p>
@@ -85,7 +85,7 @@ base = '''<html>
 			<li><strong>Share: </strong>A named Snowflake object that encapsulates all of the information required to share a database</li>
 			<li><strong>Direct share: </strong> A way to directly share specific database options (a share) to another account in the same region</li>
 			<li><strong>Listing: </strong>A way to offer a share plus metadata as a data product*</li>
-			<li><strong>Data Product: </strong>A reusable “building block” of data, data services, app code or data insights for a specific purpose</li>
+			<li><strong>Data Product: </strong>A reusable “building block” that delivers data, data services, app code or data insights for a specific purpose</li>
 		</ul>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>
 		<h4>If you are new to Snowflake</h3>
@@ -122,11 +122,11 @@ base = '''<html>
 		</p>'''
 
 shares='''<p>
-			You can view the ProviderName shares that are available to consume in your Snowflake account in the Snowsight UI. <strong>Select Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
+			To view the ProviderName shares that are available to consume in your Snowflake account in the Snowsight UI, select <strong>Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
 		</p>
-		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image4.png" class="step"/>
+		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image4.png" class="step" style="width: 50%; height: 50%;"/>
 		<p>
-			For more details, including how to use the Snowflake Classic Console or SQL to  view available, please check out our <a href="https://docs.snowflake.com/en/user-guide/data-share-consumers#viewing-available-shares">"Consuming Shared Data" doc</a>. 
+			For more details, including how to use the Snowflake Classic Console or SQL to view available shares, please check out our <a href="https://docs.snowflake.com/en/user-guide/data-share-consumers#viewing-available-shares" target="_blank">"Consuming Shared Data" doc</a>. 
 		</p>'''
 
 reader='''<h4>If you do not have a Snowflake account and do not want to set one up, ProviderName can host a Snowflake Reader Account for you</h3>
@@ -134,12 +134,12 @@ reader='''<h4>If you do not have a Snowflake account and do not want to set one 
 		<p>To request a Reader Account, please contact ProviderName.</p>'''
 
         
-end='''<h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
+end='''<h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" target="_blank" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
 		<p class="legal">
         * Use of Snowflake Marketplace is subject to the Snowflake Provider and Consumer Terms of Service, which is separate from the Snowflake Terms of Service.
         </p> 
         <p class="legal">
-			© 2023 Snowflake Inc. All rights reserved. Snowflake, the Snowflake logo, and all other Snowflake product, feature and service names mentioned herein are registered trademarks or trademarks of Snowflake Inc. in the United States and other countries. All other brand names or logos mentioned or used herein are for identification purposes only and may be the trademarks of their respective holder(s). Snowflake may not be associated with, or be sponsored or endorsed by, any such holder(s). 
+			© 2024 Snowflake Inc. All rights reserved. Snowflake, the Snowflake logo, and all other Snowflake product, feature and service names mentioned herein are registered trademarks or trademarks of Snowflake Inc. in the United States and other countries. All other brand names or logos mentioned or used herein are for identification purposes only and may be the trademarks of their respective holder(s). Snowflake may not be associated with, or be sponsored or endorsed by, any such holder(s). 
 		</p>
 	</body>
 </html>'''
