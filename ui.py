@@ -52,9 +52,7 @@ def main():
     with st.form(key='user_input_form'):
 
         # required
-        st.markdown("How do you want to refer to your organization in this document? The text you enter will be used to customize the document. Click [here](link) for an example.")
-        provider_name = st.text_input('Provider Name (required)')
-        st.markdown('---')
+        provider_name = st.text_input('Provider Name (required)' + '\n' + 'How do you want to refer to your organization in this document? The text you enter will be used to customize the document. Click here for an example.')
         
 
         # required
