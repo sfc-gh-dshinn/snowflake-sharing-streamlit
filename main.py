@@ -124,7 +124,6 @@ base = '''<html>
 shares='''<p>
 			To view the ProviderName shares that are available to consume in your Snowflake account in the Snowsight UI, select <strong>Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
 		</p>
-		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image4.png" class="step"/>
 		<p>
 			For more details, including how to use the Snowflake Classic Console or SQL to view available shares, please check out our <a href="https://docs.snowflake.com/en/user-guide/data-share-consumers#viewing-available-shares" target="_blank">"Consuming Shared Data" doc</a>. 
 		</p>'''
