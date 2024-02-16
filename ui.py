@@ -62,7 +62,7 @@ def main():
         spn_referral_link = st.text_input('SPN Referral Link (if available)' + '\n' + 'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
 
         # optional
-        desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID." Click here to see how this will appear in the doc.'''
+        desc_steps = '''Instructions to submit Snowflake ID: Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID." Click here to see how this will appear in the doc.'''
 
         steps = st.text_area(desc_steps)
 
