@@ -44,30 +44,32 @@ def main():
     
     st.title("Customize a Guidelines Doc for Sharing Data via Snowflake")
 
-    st.write("Simplify the process of sharing data with your customers: give them a how-to-share document customized with your company's name and preferences. This app will create a set of data sharing guidelines customized with your company's information to help your customer connect with you through their existing Snowflake account or by setting up a new Snowflake account.")
+    st.write("Simplify the process of sharing data with your customers: give them a how-to-share document customized with your company's name and preferences. This app will create a set of data sharing guidelines to help your customer connect with you through their existing Snowflake account or by setting up a new Snowflake account.")
 
+    st.markdown("[Click here to see a sample PDF.](link.com)")
+    
     st.write("To get started, please fill out this form as completely as possible. The app will generate a customized HTML document that you can save as a PDF and send to your customers. You can return to this form and create additional versions as needed.")
 
     # Create a form
     with st.form(key='user_input_form'):
 
         # required
-        provider_name = st.text_input('Provider Name (required)' + '\n' + 'How do you want to refer to your organization in this document? The text you enter will be used to customize the document. Click here for an example.')
+        provider_name = st.text_input('Provider Name (required):' + '\n' + 'How do you want to refer to your organization in this document? The text you enter will be used to customize the document.')
         
 
         # required
-        provider_region = st.text_input('Provider Region (required) ' + '\n' + 'A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup. Click here to see how this will appear in the doc.')
+        provider_region = st.text_input('Provider Region (required): ' + '\n' + 'A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions at https://docs.snowflake.com/en/user-guide/intro-regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup.')
 
         # optional
-        spn_referral_link = st.text_input('SPN Referral Link (if available)' + '\n' + 'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
+        spn_referral_link = st.text_input('SPN Referral Link (if available):' + '\n' + 'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
 
         # optional
-        desc_steps = '''Instructions to submit Snowflake ID: Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID." Click here to see how this will appear in the doc.'''
+        desc_steps = '''Instructions to submit Snowflake ID: Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
 
         steps = st.text_area(desc_steps)
 
         # optional
-        reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account. Click here to see how this information will appear in the doc.")
+        reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account.")
         
         submit_button = st.form_submit_button('Submit')
        
