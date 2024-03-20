@@ -51,18 +51,18 @@ base = '''<html>
 		<p>
 			Have Snowflake-specific questions about data sharing and Snowflake account creation? If you're an existing Snowflake customer, contact your Snowflake account team for help; otherwise, please <a href="https://www.snowflake.com/marketplace-contact-us" target="_blank">click here</a>. 
 		</p>
-		<h3><span><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/></span> What is Snowflake?</h3>
+		<h3><span><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/></span> What is the Snowflake Data Cloud?</h3>
 		<p>
 			Snowflake's Data Cloud is a global network where thousands of organizations mobilize data with near-unlimited scale, concurrency and performance. Snowflake provides organizations with a unified view of data so they can easily discover and securely share governed data, power data applications and execute diverse AI/ML and analytic workloads. All of this is delivered in a single data experience that spans multiple clouds and geographies.
 
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Why trust Snowflake?</h3>
 		<p>
-			Security is a core element of the Snowflake platform and the Data Cloud. Layers of network security, identity and access management and end-to-end data encryption protect the data you load and use in Snowflake, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/" target="_blank">Snowflake Security and Trust Center</a>.
+			Security is a core element of the Snowflake platform and the Data Cloud. The data you load and use in Snowflake is protected by layers of network security, identity and access management and end-to-end data encryption, helping to keep your data secure so you can spend more time analyzing it. For more details about our approach to security, including levels of compliance and certifications, please visit the <a href="https://www.snowflake.com/product/security-and-trust-center/" target="_blank">Snowflake Security and Trust Center</a>.
 		</p>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> 4 reasons to use Snowflake for data sharing</h3>
 		<ul>
-			<li><strong>It's easy. </strong>Connect in just a few clicks and start receiving data. With cross-cloud auto-fulfillment, data is available across clouds and regions when and where you need it. </li>
+			<li><strong>It's easy. </strong>Connect in just a few clicks and start receiving data. With cross-cloud auto-fulfillment, listing make available across clouds and regions when and where you need it. </li>
 			<li><strong>There's no need to move data.  </strong>Snowflake allows you to share data without transferring it. No need for ETL, FTP or moving data between environments. </li>
 			<li><strong>Robust data governance. </strong>You control access to your data in a centralized, flexible way. Share data with one other account, a group of accounts or to any company in the Data Cloud via Snowflake Marketplace.*</li>
 			<li><strong>Data is ready to use upon delivery. </strong>Snowflake delivers direct access to live, ready-to-query data. Perform fewer data transformations because the shared data stays in Snowflake, and easily join shared data sets with your own data.
@@ -70,7 +70,7 @@ base = '''<html>
 		</ul>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How does Snowflake Secure Data Sharing work?</h3>
 		<p>
-			ProviderName creates a share of a database in their Snowflake account and grants access to specific objects (tables, views and functions) in the database. You, as the consumer, will then see a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
+			ProviderName creates a listing, grants access to specific objects (tables, views and functions), and shares the listing with you. You, as the consumer, will be able to access it as a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
 		</p>
 		<p>
 			For more specific details, see our <a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro" target="_blank">Introduction to Snowflake Secure Data Sharing doc</a>.
@@ -84,7 +84,7 @@ base = '''<html>
 			<li><strong>Consumer: </strong>The account that receives data</li>
 			<li><strong>Share: </strong>A named Snowflake object that encapsulates all of the information required to share a database</li>
 			<li><strong>Direct share: </strong> A way to directly share specific database options (a share) to another account in the same region</li>
-			<li><strong>Listing: </strong>A way to offer a share plus metadata as a data product*</li>
+			<li><strong>Listing: </strong>A way to package a set of data, including metadata, examples, and more, so that the consumer is able to understand the contents and how to use it and consume it across clouds and regions*</li>
 			<li><strong>Data Product: </strong>A reusable “building block” that delivers data, data services, app code or data insights for a specific purpose</li>
 		</ul>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>

@@ -46,7 +46,7 @@ def main():
 
     st.write("Simplify the process of sharing data with your customers: give them a how-to-share document customized with your company's name and preferences. This app will create a set of data sharing guidelines to help your customer connect with you through their existing Snowflake account or by setting up a new Snowflake account.")
 
-    st.markdown("[Click here to see a sample PDF.](link.com)")
+    st.markdown("[Click here to see a sample PDF.](https://www.snowflake.com/wp-content/uploads/2024/03/Sample-Doc-How-to-Use-Snowflake-to-Share-Data.pdf)")
     
     st.write("To get started, please fill out this form as completely as possible. The app will generate a customized HTML document that you can save as a PDF and send to your customers. You can return to this form and create additional versions as needed.")
 
