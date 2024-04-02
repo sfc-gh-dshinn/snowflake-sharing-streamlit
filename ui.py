@@ -54,17 +54,20 @@ def main():
     with st.form(key='user_input_form'):
 
         # required
-        provider_name = st.text_input('Provider Name (required):' + '\n' + 'How do you want to refer to your organization in this document? The text you enter will be used to customize the document.')
+        st.markdown('**Provider Name (required)**')
+        provider_name = st.text_input('How do you want to refer to your organization in this document? The text you enter will be used to customize the document.')
         
-
         # required
-        provider_region = st.text_input('Provider Region (required): ' + '\n' + 'A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions at https://docs.snowflake.com/en/user-guide/intro-regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup.')
+        st.markdown('**Provider Region (required)**')
+        provider_region = st.text_input('A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions at https://docs.snowflake.com/en/user-guide/intro-regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup.')
 
         # optional
-        spn_referral_link = st.text_input('SPN Referral Link (if available):' + '\n' + 'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
+        st.markdown('**SPN Referral Link (if available)**')
+        spn_referral_link = st.text_input('If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
 
         # optional
-        desc_steps = '''Instructions to submit Snowflake ID: Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
+        st.markdown('**Instructions to submit Snowflake ID**')
+        desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
 
         steps = st.text_area(desc_steps)
 
