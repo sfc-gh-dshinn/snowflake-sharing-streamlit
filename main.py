@@ -1,4 +1,4 @@
-base = '''<html>
+template_text = '''<html>
   <head>
 		<title>How to use Snowflake to share data</title>
 		<style type="text/css">
@@ -46,7 +46,7 @@ base = '''<html>
 		<img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image3.jpg" class="header"/>
 		<h1>How to use Snowflake to share data</h1>
 		<p>
-		  ProviderName would like to share data with you via Snowflake to support your partnership and joint goals. This guide provides information about how to connect with ProviderName.
+		  {{ provider_name }} would like to share data with you via Snowflake to support your partnership and joint goals. This guide provides information about how to connect with {{ provider_name }}.
 		</p>
 		<p>
 			Have Snowflake-specific questions about data sharing and Snowflake account creation? If you're an existing Snowflake customer, contact your Snowflake account team for help; otherwise, please <a href="https://www.snowflake.com/marketplace-contact-us" target="_blank">click here</a>. 
@@ -70,7 +70,7 @@ base = '''<html>
 		</ul>
 		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How does Snowflake Secure Data Sharing work?</h3>
 		<p>
-			ProviderName creates a private listing, grants access to specific objects (tables, views and functions), and shares the listing with you. You, as the consumer, will be able to access it as a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
+			{{ provider_name }} creates a private listing, grants access to specific objects (tables, views and functions), and shares the listing with you. You, as the consumer, will be able to access it as a read-only database in your Snowflake account. You can configure access to this database using standard role-based access control (RBAC).
 		</p>
 		<p>
 			For more specific details, see our <a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro" target="_blank">Introduction to Snowflake Secure Data Sharing doc</a>.
@@ -87,7 +87,7 @@ base = '''<html>
 			<li><strong>Listing: </strong>A way to package a set of data, including metadata, examples, and more, so that the consumer is able to understand the contents and how to use it and consume it across clouds and regions*</li>
 			<li><strong>Data Product: </strong>A reusable “building block” that delivers data, data services, app code or data insights for a specific purpose</li>
 		</ul>
-		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from ProviderName on Snowflake</h3>
+		<h3><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> How to receive data from {{ provider_name }} on Snowflake</h3>
 		<h4>If you are new to Snowflake</h3>
 		<p>
 			Getting started with Snowflake is easy, and it's a low-risk, no-commitment process.
@@ -97,11 +97,11 @@ base = '''<html>
 			<li>At the end of your trial, your trial account converts into an on-demand account where you only pay in arrears for the storage and compute resources you actually use; scale up and down as your business needs change</li>
 			<li>Your on-demand account will never expire and you will not be forced to make a long-term financial commitment</li>
 		</ul>
-		<p>To get a free Snowflake trial account, visit SPN_ReferralLink.</p>
-		<p><strong>NOTE:</strong> During the sign-up process, you will choose the cloud region for your Snowflake instance. If you have no specific preference, we recommend you save time and costs by using the same cloud region as ProviderName: ProviderRegion.</p>
+		<p>To get a free Snowflake trial account, visit {{ spn_referral_link }}.</p>
+		<p><strong>NOTE:</strong> During the sign-up process, you will choose the cloud region for your Snowflake instance. If you have no specific preference, we recommend you save time and costs by using the same cloud region as {{ provider_name }}: {{ region_name }}.</p>
 		<h4>Once your account is set up OR if you are an existing Snowflake customer</h3>
 		<p>
-			ProviderName will need your Snowflake account identifier to share into your account. To find your Snowflake account identifier, follow these steps:
+			{{ provider_name }} will need your Snowflake account identifier to share into your account. To find your Snowflake account identifier, follow these steps:
 		</p>
 		<ol>
 			<li>Open the account selector and review the list of accounts.</li>
@@ -118,22 +118,27 @@ base = '''<html>
 		</ol>
 		<br />
 		<p>
-			Once you have your account identifier, you'll need to provide it to ProviderName.
-		</p>'''
+			Once you have your account identifier, you'll need to provide it to {{ provider_name }}.
+		</p>
 
-shares='''<p>
-			To view the ProviderName shares that are available to consume in your Snowflake account in the Snowsight UI, select <strong>Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
+        {% if steps %}
+        <p> {{ steps }} </p>
+		{% endif %}
+
+        <p>
+			To view the {{ provider_name }} shares that are available to consume in your Snowflake account in the Snowsight UI, select <strong>Data &gt;&gt; Private Sharing</strong>, then select <strong>Shared With You</strong>. You will see both privately shared listings and direct shares. 
 		</p>
 		<p>
 			For more details, including how to use the Snowflake Classic Console or SQL to view available shares, please check out our <a href="https://docs.snowflake.com/en/user-guide/data-share-consumers#viewing-available-shares" target="_blank">"Consuming Shared Data" doc</a>. 
-		</p>'''
+		</p>
 
-reader='''<h4>If you do not have a Snowflake account and do not want to set one up, ProviderName can host a Snowflake Reader Account for you</h3>
+		{% if reader %}
+        <h4>If you do not have a Snowflake account and do not want to set one up, {{ provider_name }} can host a Snowflake Reader Account for you</h3>
 		<p>A Snowflake Reader Account is a quick, cost-effective way to share data with a non-Snowflake customer. The Reader Account belongs to the data provider and can only consume data from the provider that created it. Users in a Reader Account can query the data shared with the account, but cannot perform any write operations, such as ingesting new data into the account or storing results of queries run on the shared data (a full Snowflake account is required for those capabilities).</p>
-		<p>To request a Reader Account, please contact ProviderName.</p>'''
-
+		<p>To request a Reader Account, please contact {{ provider_name }}.</p>
+		{% endif %}
         
-end='''<h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" target="_blank" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
+        <h4 class="end"><img src="https://raw.githubusercontent.com/Snowflake-Labs/sf-samples/main/samples/img/image1.png" class="snowflake"/> Learn more about Snowflake Collaboration and Secure Data Sharing at <a href="https://www.snowflake.com/en/data-cloud/workloads/collaboration/" target="_blank" class="end">snowflake.com/en/data-cloud/workloads/collaboration</a></h3>
 		<p class="legal">
         * Use of Snowflake Marketplace is subject to the Snowflake Provider and Consumer Terms of Service, which is separate from the Snowflake Terms of Service.
         </p> 

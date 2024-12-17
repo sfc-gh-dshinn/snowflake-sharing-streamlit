@@ -1,36 +1,25 @@
-from main import base, shares, reader, end
 import streamlit as st
 from PIL import Image
 import os
 import re
 
 def write_html(pr_name, reg_name, link, st=None, rdr=False):
-    global base
-    global shares
-    global reader
+    import jinja2
+
+    from main import template_text
+
     html_file = open("snowflake_data_sharing.html", "w")
 
-    # Update all provider names
-    base = re.sub(r'ProviderName', pr_name, base)
-    shares = re.sub(r'ProviderName', pr_name, shares)
-    reader = re.sub(r'ProviderName', pr_name, reader)
+    environment = jinja2.Environment()
+    template = environment.from_string(template_text)
 
-    # Update all region names
-    base = re.sub(r'ProviderRegion', reg_name, base)
-
-    # Update link
-    base = re.sub(r'SPN_ReferralLink', link, base)
-
-    # Has steps, supports reader
-    if st is not None and rdr is True:
-        html = base + st + shares + reader + end
-    elif st is not None:
-        # Has steps, does not support reader
-        html = base + st + shares + end
-    elif rdr is True:
-        html = base + shares + reader + end
-    else:
-        html = base + shares + end
+    html = template.render(
+        provider_name=pr_name,
+        region_name=reg_name,
+        spn_referral_link=link,
+        steps=st,
+        reader=rdr
+    )
 
     # close output file
     html_file.write(html)
@@ -93,21 +82,7 @@ def main():
 
         # This won't render them in list order, instead 
         # in block rendering, and it's hard to read
-        if steps != '':
-            steps = "<p>" + steps + "</p>"
-
-        if steps != '' and reader:
-            # render everything
-            write_html(provider_name, provider_region, spn_referral_link, steps, reader)
-        elif steps != '':
-            # render portion
-            write_html(provider_name, provider_region, spn_referral_link, steps)
-        elif reader:
-            # render portion
-            write_html(provider_name, provider_region, spn_referral_link, reader)
-        else:
-            # render base
-            write_html(provider_name, provider_region, spn_referral_link)
+        write_html(provider_name, provider_region, spn_referral_link, steps, reader)
 
         f = open("snowflake_data_sharing.html", "r")
 
