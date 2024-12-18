@@ -27,67 +27,121 @@ def write_html(pr_name, reg_name, link, st=None, rdr=False):
     return html_file
 
 def main():
-    
+    region_list = [
+        'AWS Asia Pacific (Jakarta)',
+        'AWS Asia Pacific (Mumbai)',
+        'AWS Asia Pacific (Osaka)',
+        'AWS Asia Pacific (Seoul)',
+        'AWS Asia Pacific (Singapore)',
+        'AWS Asia Pacific (Sydney)',
+        'AWS Asia Pacific (Tokyo)',
+        'AWS Canada (Central)',
+        'AWS China (Ningxia)',
+        'AWS EU (Frankfurt)',
+        'AWS EU (Ireland)',
+        'AWS EU (Paris)',
+        'AWS EU (Stockholm)',
+        'AWS EU (Zurich)',
+        'AWS Europe (London)',
+        'AWS South America (Sao Paulo)',
+        'AWS US East (N. Virginia)',
+        'AWS US East (Ohio)',
+        'AWS US Gov East 1 (FedRAMP High Plus)',
+        'AWS US Gov West 1 (FedRAMP High Plus)',
+        'AWS US West (Oregon)',
+        'GCP Europe West2 (London)',
+        'GCP Europe West3 (Frankfurt)',
+        'GCP Europe West4 (Netherlands)',
+        'GCP Middle East Central2 (Dammam)',
+        'GCP US Central1 (Iowa)',
+        'GCP US East4 (N. Virginia)',
+        'Microsoft Azure Australia East (New South Wales)',
+        'Microsoft Azure Canada Central (Toronto)',
+        'Microsoft Azure Central India (Pune)',
+        'Microsoft Azure Central US (Iowa)',
+        'Microsoft Azure East US 2 (Virginia)',
+        'Microsoft Azure Japan East (Tokyo)',
+        'Microsoft Azure North Europe (Ireland)',
+        'Microsoft Azure South Central US (Texas)',
+        'Microsoft Azure Southeast Asia (Singapore)',
+        'Microsoft Azure Switzerland North (Zurich)',
+        'Microsoft Azure UAE North (Dubai)',
+        'Microsoft Azure UK South (London)',
+        'Microsoft Azure US Gov Virginia (FedRAMP High Plus)',
+        'Microsoft Azure West Europe (Netherlands)',
+        'Microsoft Azure West US 2 (Washington)']
+
     image = Image.open('./assets/image3.jpg')
     st.image('./assets/image3.jpg')
-    
+
     st.title("Customize a Guidelines Doc for Sharing Data via Snowflake")
 
     st.write("Simplify the process of sharing data with your customers: give them a how-to-share document customized with your company's name and preferences. This app will create a set of data sharing guidelines to help your customer connect with you through their existing Snowflake account or by setting up a new Snowflake account.")
 
     st.markdown("[Click here to see a sample PDF.](https://www.snowflake.com/wp-content/uploads/2024/03/Sample-Doc-How-to-Use-Snowflake-to-Share-Data.pdf)")
-    
+
     st.write("To get started, please fill out this form as completely as possible. The app will generate a customized HTML document that you can save as a PDF and send to your customers. You can return to this form and create additional versions as needed.")
 
-    # Create a form
-    with st.form(key='user_input_form'):
+    st.markdown('**Choose the type of form you need**')
+    form_type = st.selectbox(label="", index=None, options=["Provider", "Consumer"], label_visibility="collapsed")
 
-        # required
-        st.markdown('**Provider Name (required)**')
-        provider_name = st.text_input('How do you want to refer to your organization in this document? The text you enter will be used to customize the document.')
-        
-        # required
-        st.markdown('**Provider Region (required)**')
-        provider_region = st.text_input('A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions at https://docs.snowflake.com/en/user-guide/intro-regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup.')
+    if form_type:
+        # Create a form
+        with st.form(key='user_input_form'):
 
-        # optional
-        st.markdown('**SPN Referral Link (if available)**')
-        spn_referral_link = st.text_input('If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
+            # required
+            st.markdown(f'**{form_type} Name (required)**')
+            provider_name = st.text_input('How do you want to refer to your organization in this document? The text you enter will be used to customize the document.')
 
-        # optional
-        st.markdown('**Instructions to submit Snowflake ID**')
-        desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
+            # required
+            st.markdown(f'**{form_type} Region (required)**')
+            provider_region = st.selectbox(
+                label='A customer will use this value to select a cloud region for their own Snowflake instance. Please check the list of supported Snowflake regions at https://docs.snowflake.com/en/user-guide/intro-regions and populate this field with your relevant region name (for example: "AWS US East (Ohio)"). This will make it easy for the customer to match it to the region options they see during account setup.',
+                options=region_list,
+                index=None
+                )
 
-        steps = st.text_area(desc_steps)
+            # optional
+            if form_type == 'Provider':
+                st.markdown('**SPN Referral Link (if available)**')
+                spn_referral_link = st.text_input('If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
+            else:
+                spn_referral_link = ''
 
-        # optional
-        reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account.")
-        
-        submit_button = st.form_submit_button('Submit')
-       
-    # Capture inputs
-    # When button is clicked:
-    # Check for errors
-    # Check for optional fields set
-    # Generate the file with required fields and optional fields
-    if submit_button:
-        # Validate inputs when button is clicked
-        if provider_name == '' or provider_region == '':
-            return st.error("File not generated. Required field is not set.")
-        
-        if spn_referral_link == '':
-            spn_referral_link = '<a href="https://signup.snowflake.com/">signup.snowflake.com</a>'
-        else:
-            spn_referral_link = f'<a href="{spn_referral_link}">{spn_referral_link}</a>'
+            # optional
+            st.markdown('**Instructions to submit Snowflake ID**')
+            desc_steps = '''Customers will need to send you their Snowflake account identifier before you can share data with them. Please provide written instructions for how they should give you their account identifier. For example: "Send your account identifier to [email address]” or “Contact your account rep and give them your account ID."'''
 
-        # This won't render them in list order, instead 
-        # in block rendering, and it's hard to read
-        write_html(provider_name, provider_region, spn_referral_link, steps, reader)
+            steps = st.text_area(desc_steps)
 
-        f = open("snowflake_data_sharing.html", "r")
+            # optional
+            reader = st.checkbox("Check this box if you will support reader accounts for companies that don't have a Snowflake account.")
 
-        st.download_button(label="Download HTML file", data=f, file_name="snowflake_data_sharing.html")
-        st.write("Once the download is complete, open the HTML file and save the page as a PDF with the file name of your choice. You can then send the PDF to your customer.")
+            submit_button = st.form_submit_button('Submit')
+
+        # Capture inputs
+        # When button is clicked:
+        # Check for errors
+        # Check for optional fields set
+        # Generate the file with required fields and optional fields
+        if submit_button:
+            # Validate inputs when button is clicked
+            if provider_name == '' or provider_region == '':
+                return st.error("File not generated. Required field is not set.")
+
+            if spn_referral_link == '':
+                spn_referral_link = '<a href="https://signup.snowflake.com/">signup.snowflake.com</a>'
+            else:
+                spn_referral_link = f'<a href="{spn_referral_link}">{spn_referral_link}</a>'
+
+            # This won't render them in list order, instead 
+            # in block rendering, and it's hard to read
+            write_html(provider_name, provider_region, spn_referral_link, steps, reader)
+
+            f = open("snowflake_data_sharing.html", "r")
+
+            st.download_button(label="Download HTML file", data=f, file_name="snowflake_data_sharing.html")
+            st.write("Once the download is complete, open the HTML file and save the page as a PDF with the file name of your choice. You can then send the PDF to your customer.")
 
 if __name__ == "__main__":
     main()
