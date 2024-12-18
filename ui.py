@@ -36,7 +36,6 @@ def main():
         'AWS Asia Pacific (Sydney)',
         'AWS Asia Pacific (Tokyo)',
         'AWS Canada (Central)',
-        'AWS China (Ningxia)',
         'AWS EU (Frankfurt)',
         'AWS EU (Ireland)',
         'AWS EU (Paris)',
