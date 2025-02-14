@@ -3,7 +3,7 @@ from PIL import Image
 import os
 import re
 
-def write_html(pr_name, reg_name, link, st=None, rdr=False, m_accts=False):
+def write_html(form_type, name, reg_name, link, st=None, rdr=False, m_accts=False):
     import jinja2
 
     from main import template_text
@@ -14,7 +14,8 @@ def write_html(pr_name, reg_name, link, st=None, rdr=False, m_accts=False):
     template = environment.from_string(template_text)
 
     html = template.render(
-        provider_name=pr_name,
+        form_type=form_type,
+        name=name,
         region_name=reg_name,
         spn_referral_link=link,
         steps=st,
@@ -162,7 +163,7 @@ def main():
 
             # This won't render them in list order, instead 
             # in block rendering, and it's hard to read
-            write_html(name, region, spn_referral_link, steps, reader)
+            write_html(form_type, name, region, spn_referral_link, steps, reader, managed_accounts)
 
             f = open("snowflake_data_sharing.html", "r")
 
