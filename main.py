@@ -161,7 +161,7 @@ template_text = '''<html>
 			<li>To create a private listing, see <a href="https://other-docs.snowflake.com/en/collaboration/provider-listings-creating-publishing" target="_blank" class="end">documentation here</a>.</li>
 
 			<p>
-				Once you have your private listing, you will need {{ name }}’s Snowflake account identifier in order to share the listing with {{ name }}. Email your main point of contact at {{ name }} to obtain their account identifier, which will be in the format <orgname>.<account_name>
+				Once you have your private listing, you will need {{ name }}’s Snowflake account identifier in order to share the listing with {{ name }}. Email your main point of contact at {{ name }} to obtain their account identifier, which will be in the format &lt;orgname&gt;.&lt;account_name&gt;
 			</p>
 			{% if managed_accounts %}
 				<h4 If you do not have a Snowflake account and do not want to set one up, {{ name }} can host a Snowflake Managed Account for you </h4>
