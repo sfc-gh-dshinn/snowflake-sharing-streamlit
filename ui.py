@@ -116,11 +116,8 @@ def main():
                     )
 
             # optional
-            if form_type == 'Provider':
-                st.markdown('**SPN Referral Link (if available)**')
-                spn_referral_link = st.text_input('If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your customer will be directed to the default Snowflake trial signup page.')
-            else:
-                spn_referral_link = ''
+            st.markdown('**SPN Referral Link (if available)**')
+            spn_referral_link = st.text_input(f'If you have a personalized link to the Snowflake free trial for Snowflake referral partners, insert it here. To learn more about this program, contact your Snowflake account team. If you leave this field blank, your {"customer" if form_type == "Provider" else "provider"} will be directed to the default Snowflake trial signup page.')
 
             # Instructions optional
             if form_type == 'Provider':
