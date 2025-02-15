@@ -4,14 +4,12 @@ import os
 import re
 
 def write_html(form_type, name, reg_name, link, st=None, rdr=False, m_accts=False):
-    import jinja2
-
-    from main import template_text
+    from jinja2 import Template
 
     html_file = open("snowflake_data_sharing.html", "w")
 
-    environment = jinja2.Environment()
-    template = environment.from_string(template_text)
+    with open('snowflake_data_sharing.html.jinja') as infile:
+        template = Template(infile.read())
 
     html = template.render(
         form_type=form_type,
