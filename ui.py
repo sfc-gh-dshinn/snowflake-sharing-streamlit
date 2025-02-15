@@ -84,7 +84,7 @@ def main():
     st.write("To get started, please select if you want to provide or receive data and fill out the form as completely as possible. The app will generate a customized HTML document that you can save as a PDF and distribute. You can return to the app and create additional versions as needed.")
 
     st.markdown('**Choose the type of document you need**')
-    form_type = st.selectbox(label="", index=None, options=["Receiver", "Provider"], format_func=lambda x: {"Receiver": "I want to receive data", "Provider": "I want to provide data"}[x], label_visibility="collapsed")
+    form_type = st.selectbox(label="Form Type", index=None, options=["Receiver", "Provider"], format_func=lambda x: {"Receiver": "I want to receive data", "Provider": "I want to provide data"}[x], label_visibility="collapsed")
 
     if form_type:
         # Create a form
